@@ -1,0 +1,9 @@
+#ifndef _ZERO_HH
+#define _ZERO_HH
+
+// the configured options and settings
+#define ZERO_VERSION_MAJOR @zero_VERSION_MAJOR@
+#define ZERO_VERSION_MINOR @zero_VERSION_MINOR@
+
+int zero();
+#endif
