@@ -1,8 +1,11 @@
 enable_testing()
 
-# Build a testing application
-add_executable(checkzero checkzero.cc)
-# Link it against the built library
-target_link_libraries(checkzero PUBLIC zero)
+# define a function to simplify adding tests
+function(do_test target)
+  add_executable(${target} ${target}.cc)
+  target_link_libraries(${target} PUBLIC zero)
+  add_test(NAME ${target} COMMAND ${target})
+endfunction(do_test)
 
-add_test(NAME iszero COMMAND checkzero)
+# Build a testing application
+do_test(checkzero)
